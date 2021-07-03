@@ -1,0 +1,68 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+}
+
+img{
+  width: 70%;
+}
+
+.end{
+  display: flex;
+  align-items: flex-end;
+
+}
+
+.left{
+  float: left;
+  width: 25%;
+  justify-content: flex-start;
+}
+
+.right{
+  float: left;
+  width: 25%;
+  justify-content: flex-end;
+}
+
+.middle{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen
+and (max-device-width : 540px){
+  .mobileContent{
+    display: none;
+  }
+
+  .middle{
+    width: 100%;
+    height: 100vh;
+  }
+
+  .main{
+    width: 100% !important;
+    justify-content: space-between;
+  }
+}
+
+.ecommerceImg{
+  height: 30%;
+}
+
+.wrapper{
+  display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.main{
+  display: flex;
+    flex-direction: column;
+    width: 50%;
+}

@@ -1,0 +1,52 @@
+<div class="signup">
+  <div class="wrapper">
+
+
+    <form [formGroup]="passForm">
+      <div class="inline ">
+        <div class="iconWrap">
+          <img class="arrow" src="./../../assets/leftArrow.svg">
+        </div>
+        <div>
+          <h2>Create your password</h2>
+        </div>
+      </div>
+      <div class="padding">
+        <h6 class=" padding passLbl">Create password</h6>
+        <input
+          class="passwordInput"
+          [type]="showPassword ? 'text' : 'password'"
+          formControlName="password"
+          [ngClass]="{'blackBorder': isInputFilled()}"
+          >
+      </div>
+      <div class="passValidator padding">
+        <div class="item">
+          <img *ngIf= "!firstValidator" src="./../../assets/notChecked.svg" class="notCheckedImg">
+          <img *ngIf= "firstValidator" src="./../../assets/checkedGreen.svg" class="notCheckedImg">
+          <label [ngClass]="{'greenLbl': firstValidator}">Password should be at least 8 characters</label>
+        </div>
+      <div class="item">
+        <img  *ngIf= "!secondValidator" src="./../../assets/notChecked.svg" class="notCheckedImg">
+        <img *ngIf= "secondValidator" src="./../../assets/checkedGreen.svg" class="notCheckedImg">
+        <label [ngClass]="{'greenLbl': secondValidator}" >Password should include at least one number or symbol</label>
+      </div>
+      <div class="showPass">
+        <input class="checkbox" type="checkbox" name="showPass" value="true" (change)="onShowPass()"/>
+        <label class="showPassLbl" for="showPass">Show password</label>
+      </div>
+      </div>
+
+      <div style="margin: 12px 0;">
+        <button
+        class="signupBtn "
+        [disabled]="!passForm.valid"
+        [ngClass]="{'disabledBtn' : !passForm.valid}"
+        ><label class="buttonLbl">Signup</label></button>
+      </div>
+    </form>
+  </div>
+
+</div>
+
+
